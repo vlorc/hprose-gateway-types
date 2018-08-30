@@ -134,3 +134,31 @@ type SourceFactory interface {
 	Instance(router NamedRouter, manger SourceManger) Source
 	Release(Source)
 }
+
+func Integer(s string, v int64) int64 {
+	if len(s) > 0 && uint(s[0])-48 < 10 {
+		v = 0
+		for _, c := range s {
+			u := uint(c) - 48
+			if u > uint(9) {
+				break
+			}
+			v = v*10 + int64(u)
+		}
+	}
+	return v
+}
+
+func String(s string, v string) string {
+	if "" == s {
+		return v
+	}
+	return s
+}
+
+func Boolean(s string, v bool) bool {
+	if "" == s {
+		return v
+	}
+	return "true" == s
+}
