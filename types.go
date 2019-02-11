@@ -31,15 +31,15 @@ type Describe struct {
 }
 
 type Service struct {
-	Id       string                 `json:",omitempty"`
-	Name     string                 `json:",omitempty"`
-	Path     string                 `json:",omitempty"`
-	Driver   string                 `json:",omitempty"`
-	Version  string                 `json:",omitempty"`
-	Url      string                 `json:",omitempty"`
-	Platform string                 `json:",omitempty"`
-	Plugins  []Describe             `json:",omitempty"`
-	Meta     map[string]interface{} `json:",omitempty"`
+	Id       string            `json:",omitempty"`
+	Name     string            `json:",omitempty"`
+	Path     string            `json:",omitempty"`
+	Driver   string            `json:",omitempty"`
+	Version  string            `json:",omitempty"`
+	Url      string            `json:",omitempty"`
+	Platform string            `json:",omitempty"`
+	Plugins  []Describe        `json:",omitempty"`
+	Meta     map[string]string `json:",omitempty"`
 }
 
 type Named struct {
